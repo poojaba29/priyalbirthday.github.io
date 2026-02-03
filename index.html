@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
     <title>Happy Birthday Priyal 💖</title>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -567,6 +569,41 @@
             pointer-events:none; /* no click issue */
         }
 
+         /* GHIBLI SECTION */
+        .ghibli-card{
+            background:linear-gradient(135deg,#fffafc,#ffeef4);
+        }
+
+        .ghibli-text{
+            font-size:1.1rem;
+            color:#880e4f;
+            margin-bottom:15px;
+            font-style:italic;
+        }
+
+        .ghibli-img-box{
+            max-width:280px;
+            margin:0 auto;
+            border-radius:20px;
+            overflow:hidden;
+
+            box-shadow:0 10px 25px rgba(255,105,180,0.3);
+
+            animation:fade 2s ease;
+        }
+
+        .ghibli-img-box img{
+            width:100%;
+            display:block;
+            border-radius:20px;
+            transition:transform 0.4s ease;
+        }
+
+        /* Hover zoom */
+        .ghibli-img-box:hover img{
+            transform:scale(1.05);
+        }
+
     </style>
 </head>
 
@@ -660,6 +697,26 @@
             Jo log ek saal mein manate hain,<br>
             woh Diwali mein tere saath har roz manati hoon ✨💖”
         </p>
+    </section>
+
+        <!-- GHIBLI MEMORY -->
+    <section class="card ghibli-card">
+
+        <h2>Our Little Forever 🌙✨</h2>
+
+        <p class="ghibli-text">
+            In this small anime world,<br>
+            I found my biggest happiness…<br>
+            You 🤍<br><br>
+
+            No filter. No edit.<br>
+            Just us, just love, just memories 💫
+        </p>
+
+        <div class="ghibli-img-box">
+            <img src="./ghibli.jpeg" alt="Ghibli Us">
+        </div>
+
     </section>
 
     <!-- HEART -->
