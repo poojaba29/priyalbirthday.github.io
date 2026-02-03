@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Priyal 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            text-align: center;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #fff;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header button {
+            padding: 10px 20px;
+            background: #e91e63;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        header button:hover {
+            background: #c2185b;
+        }
+
+        /* SECTION */
+
+        section {
+            padding: 50px 20px;
+        }
+
+        /* TITLES */
+
+        /* h1 {
+            font-size: 2.5rem;
+            color: #c2185b;
+            animation: fade 2s;
+        } */
+
+        h1{
+            font-family: 'Great Vibes', cursive;
+            font-size:3.5rem;
+            color:#c2185b;
+            animation:fade 2s;
+            letter-spacing:2px;
+        }
+
+        .name{
+            font-family: 'Great Vibes', cursive;
+            font-size:2.4rem;
+            color:#c2185b;
+            letter-spacing:2px;
+            text-shadow:1px 1px 5px rgba(0,0,0,0.2);
+            animation: fade 2s ease-in-out;
+        }
+
+        .tagline{
+            font-size:1.2rem;
+            color:#c2185b;
+            font-weight:600;
+            margin-top:8px;
+            letter-spacing:1px;
+            font-style:italic;
+            animation: fade 2s ease-in-out;
+        }
+
+        /* h2 {
+            color: #ad1457;
+            margin: 15px 0;
+        } */
+
+        h2{
+            font-family: 'Poppins', sans-serif;
+            color:#ad1457;
+            margin:15px 0;
+            font-weight:600;
+        }
+
+
+        /* CARD */
+
+        .card {
+            background: #fff;
+            max-width: 750px;
+            margin: 25px auto;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            animation: slideUp 1.5s;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* BALLOONS */
+
+        .balloon-box {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .balloon {
+            width: 70px;
+            height: 90px;
+            border-radius: 50%;
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        .balloon:after {
+            content: '';
+            width: 2px;
+            height: 60px;
+            background: #555;
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+        }
+
+        .b1 {
+            background: #ff4081;
+            animation-delay: 0s;
+        }
+
+        .b2 {
+            background: #ff9800;
+            animation-delay: 1s;
+        }
+
+        .b3 {
+            background: #4caf50;
+            animation-delay: 2s;
+        }
+
+        /* HEART */
+
+        .heart {
+            width: 75px;
+            height: 75px;
+            background: #c14271;
+            position: relative;
+            transform: rotate(-45deg);
+            margin: 25px auto;
+            animation: pulse 1.5s infinite;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 95, 158, 0.4);
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            width: 75px;
+            height: 75px;
+            background: #c14271;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart:before {
+            top: -37px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 37px;
+            top: 0;
+        }
+
+        /* CLICK HEART TEXT */
+
+        .click-text {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #c2185b;
+        }
+
+        /* WISHES */
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        /* POPUP CARD */
+        .popup {
+            position: fixed;
+            inset: 0;
+
+            background: rgba(0,0,0,0.6);
+
+            display: none;
+            justify-content: center;
+
+            /* Important for mobile */
+            align-items: flex-start;
+
+            overflow-y: auto;
+            padding: 20px;
+
+            z-index: 2000;
+        }
+
+        /* POPUP CARD */
+        .popup-card {
+            background: #fff;
+
+            width: 100%;
+            max-width: 420px;
+
+            margin: auto;
+
+            padding: 20px;
+            border-radius: 20px;
+
+            text-align: center;
+            position: relative;
+
+            animation: zoom 0.4s ease;
+
+            /* Prevent inside scroll */
+            overflow: hidden;
+        }
+
+        /* IMAGE */
+        .popup-img {
+            width: 100%;
+            max-width: 260px;
+
+            max-height: 40vh;
+            height: auto;
+
+            object-fit: contain;
+
+            border-radius: 15px;
+            margin: 10px auto 15px;
+
+            display: block;
+        }
+
+        /* CLOSE BUTTON */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+
+            font-size: 24px;
+            cursor: pointer;
+            color: #ff5f9e;
+        }
+
+        /* ANIMATION */
+        @keyframes zoom {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            padding: 25px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1) rotate(-45deg);
+            }
+
+            50% {
+                transform: scale(1.1) rotate(-45deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(-45deg);
+            }
+        }
+
+        /* MOBILE */
+
+        @media(max-width:600px) {
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                margin: 15px;
+            }
+
+        }
+
+        /* MESSAGE SECTION */
+
+        .message-container{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:30px;
+            flex-wrap:wrap;
+        }
+
+        /* image animation */
+        .message-img{
+            width:200px;
+            animation:slideLeft 1.5s ease both;
+        }
+
+        .message-img img{
+            width:100%;
+        }
+
+        /* text animation */
+        .message-text{
+            max-width:400px;
+            text-align:left;
+            animation:slideRight 1.5s ease both;
+        }
+
+        /* animations */
+        @keyframes slideLeft{
+            from{opacity:0; transform:translateX(-50px);}
+            to{opacity:1; transform:translateX(0);}
+        }
+
+        @keyframes slideRight{
+            from{opacity:0; transform:translateX(50px);}
+            to{opacity:1; transform:translateX(0);}
+        }
+
+        /* mobile */
+        @media(max-width:700px){
+            .message-container{
+                flex-direction:column;
+            }
+
+            .message-text{
+                text-align:center;
+            }
+        }
+
+
+        /* Quote */
+        .quote-card{
+            background:linear-gradient(135deg,#fff0f5,#ffe4ec);
+        }
+
+        .quote-text{
+            font-style:italic;
+            font-size:1.2rem;
+            color:#880e4f;
+            line-height:1.8;
+        }
+
+        .final-line{
+            margin-top:10px;
+            font-weight:600;
+            color:#e91e63;
+            font-size:15px;
+            animation: 2s infinite;
+        }
+
+        /* CAKE SECTION */
+
+        /* .cake-section{
+            margin:40px 0;
+        } */
+
+        .cake{
+            font-size:70px;
+            animation:cakeBounce 1.5s infinite;
+            cursor:pointer;
+        }
+
+        .cake-text{
+            margin-top:8px;
+            font-weight:600;
+            color:#c2185b;
+            font-size:14px;
+        }
+
+        /* Cake Animation */
+
+        @keyframes cakeBounce{
+            0%{ transform:translateY(0) scale(1); }
+            50%{ transform:translateY(-12px) scale(1.1); }
+            100%{ transform:translateY(0) scale(1); }
+        }
+
+        /* WISH CAKE */
+
+        .wish-card{
+            padding:25px;
+        }
+
+        .wish-cake{
+            position:relative;
+            width:160px;
+            margin:20px auto;
+            margin-top: 80px;
+        }
+
+        /* Cake Body */
+        .cake-body{
+            width:160px;
+            height:90px;
+            background:linear-gradient(#ffb6c1,#ff69b4);
+            border-radius:0 0 20px 20px;
+        }
+
+        /* Candles */
+        .candles{
+            display:flex;
+            justify-content:center;
+            gap:15px;
+            position:absolute;
+            top:-35px;
+            width:100%;
+        }
+
+        .candle{
+            width:10px;
+            height:40px;
+
+            background:linear-gradient(#ffffff,#ffd6e5); /* visible */
+
+            border-radius:4px;
+
+            border:1px solid #ff9fc5;   /* outline */
+
+            box-shadow:0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Flames */
+        .flames{
+            display:flex;
+            justify-content:center;
+            gap:15px;
+            position:absolute;
+            top:-55px;
+            width:100%;
+        }
+
+        .flame{
+            width:12px;
+            height:20px;
+            background:orange;
+            border-radius:50% 50% 50% 50%;
+            animation:flicker 1s infinite;
+        }
+
+        /* Blow out animation */
+        .flame.off{
+            animation:none;
+            opacity:0;
+            transform:scale(0);
+        }
+
+        /* Wish text */
+        .wish-text{
+            margin-top:15px;
+            font-size:1.1rem;
+            color:#c2185b;
+            line-height:1.6;
+            font-weight:500;
+        }
+
+        /* Flame flicker */
+        @keyframes flicker{
+            0%{transform:scale(1);}
+            50%{transform:scale(1.2);}
+            100%{transform:scale(1);}
+        }
+
+        /* Name on Cake */
+        .cake-name{
+            position:absolute;
+            top:50%;
+            left:50%;
+
+            transform:translate(-50%,-50%);
+
+            font-family:'Great Vibes', cursive;
+            font-size:1.3rem;
+
+            color:#c2185b;
+
+            text-shadow:1px 1px 3px rgba(255,255,255,0.8);
+
+            pointer-events:none; /* no click issue */
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- MUSIC -->
+
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- BIRTHDAY SONG -->
+    <audio id="birthdayMusic" loop>
+        <source src="birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <header>
+        <button onclick="toggleMusic()">🎵 Play / Pause Music</button>
+    </header>
+
+    <!-- HERO -->
+
+    <section>
+
+        <h1>🎉 Happy Birthday 🎉</h1>
+
+        <h2 class="name">Priyal 💖</h2>
+
+        <p class="tagline">You Are My Forever Happiness ♾️✨</p>
+
+        <div class="balloon-box">
+
+            <div class="balloon b1"></div>
+            <div class="balloon b2"></div>
+            <div class="balloon b3"></div>
+
+        </div>
+
+    </section>
+
+    <!-- MESSAGE -->
+
+    <section class="card message-section">
+
+        <div class="message-container">
+
+            <!-- IMAGE -->
+            <div class="message-img">
+            <img src="./image1.jpg" alt="Friends">
+            </div>
+
+            <!-- TEXT -->
+            <div class="message-text">
+
+            <h2>For You, From My Heart 💌</h2>
+
+           <p>
+                From college corridors to office routines,<br>
+                from sharing notes to sharing life…<br>
+                some bonds don’t fade — they only grow deeper 💫<br><br>
+
+                You were not just my best friend,<br>
+                you became my sister, my constant, my strength 🤍<br><br>
+
+                In moments when I feel low,<br>
+                your words quietly hold me together 💕<br>
+                And every time I smile without a reason,<br>
+                it’s somehow because of you 😊<br><br>
+
+                Life feels lighter, kinder, and stronger,<br>
+                just because you are part of it ✨<br><br>
+
+                I’m truly blessed to have you in my life 💖
+
+            </p>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Quote -->
+
+    <section class="card quote-card">
+        <h2>From My Pen 🖊️💖</h2>
+        <p class="quote-text">
+            “Jab saath hoti hoon tere,<br>
+            apni saari bimariyan bhool jaati hoon…<br>
+            Jo log ek saal mein manate hain,<br>
+            woh Diwali mein tere saath har roz manati hoon ✨💖”
+        </p>
+    </section>
+
+    <!-- HEART -->
+
+    <section>
+
+        <div class="heart" onclick="showLove()"></div>
+
+        <div class="click-text">Click With Love ✨</div>
+
+        <p id="loveMsg"></p>
+
+    </section>
+
+    <!-- WISHES -->
+
+    <section class="card">
+
+        <h2>My Wishes For You 🎁</h2>
+
+        <ul>
+            <li>🌸 May your smile never fade</li>
+            <li>💫 May your dreams touch the sky</li>
+            <li>💕 May success always follow you</li>
+            <li>🌈 May your life be filled with endless happiness</li>
+        </ul>
+
+    </section>
+
+    <!-- FINAL -->
+
+    <section class="card">
+
+        <h2>Always Remember 💝</h2>
+
+        <p>
+
+            No matter where life takes us,<br>
+            I’ll always be beside you 🤝<br><br>
+
+            Today, tomorrow, forever…<br>
+            You are my sister by heart ❤️
+
+        </p>
+
+    </section>
+
+    <!-- CAKE -->
+
+    <section class="cake-section">
+
+        <div class="cake" onclick="openWish()">🎂</div>
+
+        <div class="cake-text">Make A Wish 🤞</div>
+
+    </section>
+
+    <footer>
+
+        Made with infinite love 💖<br>
+        Happy Birthday Once Again 🎂✨
+
+    </footer>
+
+    <script>
+
+        let music = document.getElementById("music");
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                music.pause();
+            } else {
+                music.play();
+            }
+
+            isPlaying = !isPlaying;
+        }
+
+        function showLove(){
+            document.getElementById("popup").style.display = "flex";
+
+            // play music also
+            // music.play();
+            // isPlaying = true;
+        }
+
+        function closeCard(){
+            document.getElementById("popup").style.display = "none";
+        }
+
+        function openWish(){
+
+            document.getElementById("wishPopup").style.display = "flex";
+
+            let flames = document.querySelectorAll(".flame");
+            let text = document.getElementById("wishText");
+
+            let birthdayMusic = document.getElementById("birthdayMusic");
+                music.pause();
+                isPlaying = false;
+                
+            // Play birthday song
+            birthdayMusic.currentTime = 0;
+            birthdayMusic.play();
+
+            // Reset
+            flames.forEach(f => f.classList.remove("off"));
+
+            text.innerHTML = "Close your eyes…<br>Make a wish from your heart 💖✨";
+
+            // Blow after 2 seconds
+            setTimeout(() => {
+
+                flames.forEach(f => f.classList.add("off"));
+
+                text.innerHTML = `
+                Your wish is in the universe now 🌌✨<br><br>
+                May every dream you hold come true 💝🤍<br>
+                I’ll always be cheering for you 💫
+                `;
+
+            }, 7000);
+        }
+
+
+        function closeWish(){
+            document.getElementById("wishPopup").style.display = "none";
+
+            let birthdayMusic = document.getElementById("birthdayMusic");
+
+            music.play();
+            isPlaying = true;
+
+            // Stop birthday song
+            birthdayMusic.pause();
+            birthdayMusic.currentTime = 0;
+        }
+
+    </script>
+
+    <!-- POPUP CARD -->
+    <div id="popup" class="popup">
+
+    <div class="popup-card">
+
+        <span class="close" onclick="closeCard()">×</span>
+
+        <img src="./image2.jpeg" class="popup-img">
+
+        <h2>Do you Remember ?🤔💭</h2>
+
+        <p>
+            We first met in the monsoon, classmates who never really talked 🤍<br><br>
+
+            That rainy day, you came on your scooter 🛵✨ while I was walking 🚶‍♀️<br>
+            My friend (Mansi) called you for a ride, and you said yes without a second thought 💫<br><br>
+
+            After dropping me home safely 🏡❤️,<br>
+            you made sure I went inside before leaving 🥺💞<br><br>
+
+            From that day, we started talking and going everywhere together 🤝💬<br>
+            You got your job first 💼🌟 and even helped me get mine 🙏💖<br><br>
+
+            Now, you are my family 👩‍❤️‍👩💐, and I am yours 🤍<br>
+            That scooter and rain will always remind me of our special beginning ☔🛵✨💖
+        </p>
+
+        <p class="final-line">
+            You are precious to me, today and always 🌼🤍
+        </p>
+
+    </div>
+
+    </div>
+
+
+    <!-- WISH POPUP -->
+    <div id="wishPopup" class="popup">
+        <div class="popup-card wish-card">
+
+            <span class="close" onclick="closeWish()">×</span>
+
+            <h2>Make A Wish ✨🤞</h2>
+
+            <!-- Cake -->
+            <div class="wish-cake">
+
+            <div class="cake-body">  <span class="cake-name">Happy Birthday Priyal 🎉</span> </div>
+
+            <!-- Candles -->
+            <div class="candles">
+                <span class="candle"></span>
+                <span class="candle"></span>
+                <span class="candle"></span>
+            </div>
+
+            <!-- Flames -->
+            <div class="flames">
+                <span class="flame"></span>
+                <span class="flame"></span>
+                <span class="flame"></span>
+            </div>
+
+            </div>
+
+            <!-- Message -->
+            <p id="wishText" class="wish-text">
+            Close your eyes…<br>
+            Make a wish from your heart 💖✨
+            </p>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
